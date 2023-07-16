@@ -10,7 +10,11 @@ Proyecto de data engineering
 # API
 
   - [Balldontlie](https://app.balldontlie.io/): Api pública con datos de la NBA.
-   
+
+# Language
+
+  - Python: 3.11.4
+
 # Database
 
   - Amazon Redshift
