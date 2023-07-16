@@ -18,3 +18,12 @@ Proyecto de data engineering
 # Database
 
   - Amazon Redshift
+
+# Install Dependencies
+
+  - pip3 install -r ETL/requirements.txt
+
+# Run
+
+  - python3 ETL/src/main.py
+
