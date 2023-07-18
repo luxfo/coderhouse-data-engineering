@@ -3,17 +3,17 @@ from config import api_config
 
 BASE_URL = api_config['base_url'] 
 
-def extractTeams()-> dict:
+def extractTeams(pParams = None)-> dict:
     route = BASE_URL + "/teams"
-    data = getRequest(route)
+    data = getRequest(route, pParams)
     return data
 
-def extractPlayers()-> dict:
+def extractPlayers(pParams = None)-> dict:
     route = BASE_URL + "/players"
-    data = getRequest(route)
+    data = getRequest(route, pParams)
     return data
 
-def extractGames()-> dict:
+def extractGames(pParams = None)-> dict:
     route = BASE_URL + "/games"
-    data = getRequest(route)
+    data = getRequest(route, pParams)
     return data
