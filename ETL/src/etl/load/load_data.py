@@ -15,7 +15,7 @@ def load_data(p_dfs):
 
 def _load_teams(p_df):
     try:
-        logger.debug('Load teams data')
+        logger.info('Load teams data')
         table = 'teams'
         _to_sql(p_df, table)
     except Exception as err:
@@ -23,7 +23,7 @@ def _load_teams(p_df):
 
 def _load_players(p_df):
     try:
-        logger.debug('Load players data')
+        logger.info('Load players data')
         table = 'players'
         _to_sql(p_df, table)
     except Exception as err:
@@ -31,7 +31,7 @@ def _load_players(p_df):
 
 def _load_games(p_df):
     try:
-        logger.debug('Load games data')
+        logger.info('Load games data')
         table = 'games'
         _to_sql(p_df, table)
     except Exception as err:

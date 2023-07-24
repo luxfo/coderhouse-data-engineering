@@ -19,7 +19,7 @@ def transform_data(p_data):
 
 def _transform_data_teams(p_data_teams):
     try:
-        logger.debug('Transform teams data')
+        logger.info('Transform teams data')
         new_data = []
         #New array with only info from teams
         for teams in p_data_teams:
@@ -35,7 +35,7 @@ def _transform_data_teams(p_data_teams):
 
 def _transform_data_players(p_data_players):
     try:
-        logger.debug('Transform players data')
+        logger.info('Transform players data')
         new_data = []
         #New array with only info from players
         for players in p_data_players:
@@ -52,7 +52,7 @@ def _transform_data_players(p_data_players):
 
 def _transform_data_games(p_data_games):
     try:
-        logger.debug('Transform games data')
+        logger.info('Transform games data')
         new_data = []
         #New array with only info from games
         for games in p_data_games:

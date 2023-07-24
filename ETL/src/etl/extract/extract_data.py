@@ -19,7 +19,7 @@ def extract_data() -> dict:
 
 def _extract_all_teams() -> []:
     try:
-        logger.debug('Extract all teams')
+        logger.info('Extract all teams')
         data_teams = []
         p = 1
 
@@ -40,7 +40,7 @@ def _extract_all_teams() -> []:
 
 def _extract_all_players() -> []:
     try:
-        logger.debug('Extract all players')
+        logger.info('Extract all players')
         data_players = []
         p = 1
 
@@ -61,7 +61,7 @@ def _extract_all_players() -> []:
 
 def _extract_all_games() -> []:
     try:
-        logger.debug('Extract all games')
+        logger.info('Extract all games')
         data_games = []
         p = 1
 

@@ -91,6 +91,9 @@ celerybeat-schedule
 # Log files
 *.log
 
+#Jupyter Notebooks files
+*.ipynb
+
 # Environments
 .env
 .venv
