@@ -10,4 +10,4 @@ def _get_request(p_route, p_params=None):
 
         return response.json()
     except Exception as err:
-        logger.error(err, exc_info=True)
+        raise

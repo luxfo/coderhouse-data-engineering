@@ -12,4 +12,4 @@ def etl():
         #Load data
         load_data(dfs)
     except Exception as err:
-        logger.error(err, exc_info=True)
+        raise

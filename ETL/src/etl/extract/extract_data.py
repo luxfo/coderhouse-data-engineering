@@ -57,7 +57,7 @@ def _extract_all_players() -> []:
         #logger.debug(data_players)
         return data_players
     except Exception as err:
-        raise
+        logger.exception(err)
 
 def _extract_all_games() -> []:
     try:
