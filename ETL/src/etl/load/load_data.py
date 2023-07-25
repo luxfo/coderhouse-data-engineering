@@ -1,5 +1,6 @@
 import utils.logger as logger
 import database as db
+import config as cfg
 import pandas as pd
 
 def load_data(p_dfs):
@@ -39,16 +40,14 @@ def _load_games(p_df):
 
 def _to_sql(p_df, p_table):
     try:
-        logger.debug('Create db connector')
-        #Get connector
-        engine = db.get_engine()
+        logger.debug('db connection database')
         #Clean table
-        with engine.connect() as conn:
+        with db.engine.connect() as conn:
             logger.debug('truncate table ' + p_table)
-            conn.execute('TRUNCATE TABLE ' + db.get_schema() + '.' + p_table)
+            conn.execute('TRUNCATE TABLE ' + cfg.db_schema + '.' + p_table)
         #Insert data to table
         logger.debug('insert table ' + p_table)
-        p_df.to_sql(p_table, engine, schema=db.get_schema(), if_exists='append', index=False, method='multi')
+        p_df.to_sql(p_table, db.engine, schema=cfg.db_schema, if_exists='append', index=False, method='multi')
     except Exception as err:
         raise
 

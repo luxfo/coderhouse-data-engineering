@@ -1,6 +1,7 @@
 {
     "api": {
-        "base_url": "https://www.balldontlie.io/api/v1"
+        "base_url": "https://www.balldontlie.io/api/v1",
+        "retry_after": 60
     },
     "logging": {
         "level": "DEBUG"

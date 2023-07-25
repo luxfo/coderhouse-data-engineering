@@ -1,1 +1,1 @@
-from .connector import get_engine, get_schema
+from .connector import engine

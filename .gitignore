@@ -92,9 +92,6 @@ celerybeat-schedule
 log/
 *.log
 
-#Jupyter Notebooks files
-*.ipynb
-
 # Environments
 .env
 .venv
