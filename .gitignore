@@ -89,6 +89,7 @@ celerybeat-schedule
 *.sage.py
 
 # Log files
+log/
 *.log
 
 #Jupyter Notebooks files
