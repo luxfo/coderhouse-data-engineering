@@ -1,5 +1,5 @@
-from ...utils import api_request as api_req
-from ...config import API_URL
+from ..utils import api_request as api_req
+from ..config import API_URL
 
 def get_teams(p_params = None)-> dict:
     try:
