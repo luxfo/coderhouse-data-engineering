@@ -92,6 +92,9 @@ celerybeat-schedule
 log/
 *.log
 
+# ds_store
+*.DS_Store
+
 # Environments
 .env
 .venv
