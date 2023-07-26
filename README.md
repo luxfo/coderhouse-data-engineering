@@ -4,7 +4,7 @@ Proyecto de data engineering
 
 # Folders
 
-  - ETL: Scripts python para extracción de datos
+  - ETL: Scripts python para extracción, transformación y carga de datos
   - Database: Script con creación de tablas
 
 # API
