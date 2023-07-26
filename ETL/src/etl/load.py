@@ -43,7 +43,8 @@ def _to_sql(p_df, p_table):
         logger.debug('db connection database')
         
         # Truncate table
-        # (Don't use parameter if_exist='replace' on dataframe.to_sql becouse drop the table)
+        # (Don't use parameter if_exist='replace' on dataframe.to_sql
+        # becouse drop the table and created again with others data types for columns)
         with engine.connect() as conn:
             logger.debug('truncate table ' + p_table)
             conn.execute('TRUNCATE TABLE ' + DB_SCHEMA + '.' + p_table)
