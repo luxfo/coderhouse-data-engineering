@@ -25,5 +25,5 @@ Proyecto de data engineering
 
 # Run
 
-  - python3 ETL/src/main.py
+  - python3 ETL/main.py
 

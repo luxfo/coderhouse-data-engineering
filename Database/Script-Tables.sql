@@ -5,7 +5,8 @@ city 			varchar(50),
 conference		varchar(50),
 division		varchar(50),
 full_name		varchar(100),
-name 			varchar(100)
+name 			varchar(100),
+etl_date        date
 ) sortkey(full_name)
 go
 
@@ -17,7 +18,8 @@ position		varchar(1),
 height_feet		int,
 height_inches	int,
 weight_pounds	int,
-team_id			int
+team_id			int,
+etl_date        date
 ) sortkey(first_name, last_name)
 
 go
@@ -32,6 +34,7 @@ season				int,
 status 				varchar(10),
 time 				varchar(10),
 visitor_team_id		int,
-visitor_team_score	int
+visitor_team_score	int,
+etl_date            date
 ) sortkey(date, season)
 go

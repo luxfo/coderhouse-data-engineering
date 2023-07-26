@@ -1,5 +1,5 @@
-import utils.logger as logger
 import pandas as pd
+from ..utils import logger
 
 def transform_data(p_data):
     try:
@@ -29,6 +29,7 @@ def _transform_data_teams(p_data_teams):
         #DataFrame from team data
         df_teams = pd.DataFrame(new_data)
         df_teams.drop_duplicates()
+        df_teams['etl_date'] = pd.Timestamp.today().strftime('%Y-%m-%d')
         return df_teams
     except Exception as err:
         raise
@@ -46,6 +47,7 @@ def _transform_data_players(p_data_players):
     
         df_players = pd.DataFrame(new_data)
         df_players.drop_duplicates()
+        df_players['etl_date'] = pd.Timestamp.today().strftime('%Y-%m-%d')
         return df_players
     except Exception as err:
         raise
@@ -65,6 +67,7 @@ def _transform_data_games(p_data_games):
     
         df_games = pd.DataFrame(new_data)
         df_games.drop_duplicates()
+        df_games['etl_date'] = pd.Timestamp.today().strftime('%Y-%m-%d')
         return df_games
     except Exception as err:
         raise
