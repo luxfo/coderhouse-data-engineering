@@ -5,11 +5,11 @@ def pipeline():
     try:
         logger.info('Started')
 
-        # Extract data - return a new dict with all data
+        # Extract data: Return a new dict with all data
         data = extract_data()
-        # Transform data - Return a dict with dataframes
+        # Transform data: Return a new dict with dataframes
         dfs = transform_data(data)
-        # Load data
+        # Load data: Load dataframes to the database
         load_data(dfs)
 
         logger.info('Finished')

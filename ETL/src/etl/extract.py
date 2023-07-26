@@ -3,11 +3,11 @@ from ..datasets import get_teams, get_games, get_players
 
 def extract_data() -> dict:
     try:
-        #Extract all teams
+        # Extract all teams
         data_teams = _extract_teams()
-        #Extract all players
+        # Extract all players
         data_players = _extract_players()
-        #Extract all games
+        # Extract all games
         data_games = _extract_games()
 
         #return {'teams': data_teams}
@@ -24,9 +24,9 @@ def _extract_teams() -> []:
         p = 1
 
         while True:
-            #Get teams from api
+            # Get teams from api
             api_response = get_teams({'page': p, 'per_page': 100})
-            #Check if key exists and has data
+            # Check if key exists and has data
             if 'data' in api_response and len(api_response['data']) > 0:
                 data_teams.append(api_response)
                 p += 1
@@ -45,9 +45,9 @@ def _extract_players() -> []:
         p = 1
 
         while True:
-            #Get players from api
+            # Get players from api
             api_response = get_players({'page': p, 'per_page': 100})
-            #Check if key exists and has data
+            # Check if key exists and has data
             if 'data' in api_response and len(api_response['data']) > 0:
                 data_players.append(api_response)
                 p += 1
@@ -66,9 +66,9 @@ def _extract_games() -> []:
         p = 1
 
         while True:
-            #Get games from api
+            # Get games from api
             api_response = get_games({'page': p, 'per_page': 100})
-            #Check if key exists and has data
+            # Check if key exists and has data
             if 'data' in api_response and len(api_response['data']) > 0:
                 data_games.append(api_response)
                 p += 1
