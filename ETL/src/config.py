@@ -1,11 +1,14 @@
+import sys
 import os
 import json
 from dotenv import load_dotenv
 
 load_dotenv()
 
+ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+
 _settings = None
-with open('ETL/settings.json') as f:
+with open(ROOT_DIR + '/settings.json') as f:
     _settings = json.load(f)
 
 API_URL         = _settings['api']['base_url']
@@ -18,5 +21,3 @@ DB_DATABASE     = os.getenv('DB_DATABASE')
 DB_SCHEMA       = os.getenv('DB_SCHEMA')
 DB_USER         = os.getenv('DB_USER')
 DB_PASS         = os.getenv('DB_PASS')
-
-
