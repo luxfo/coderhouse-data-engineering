@@ -14,10 +14,10 @@ with open(ROOT_DIR + '/settings.json') as f:
 API_URL         = _settings['api']['base_url']
 API_RETRY_AFTER = _settings['api']['retry_after']
 LOG_LEVEL       = _settings['logging']['level']
-DB_DRIVER       = os.getenv('DB_DRIVER')
-DB_HOST         = os.getenv('DB_HOST')
+DB_DRIVER       = str(os.getenv('DB_DRIVER'))
+DB_HOST         = str(os.getenv('DB_HOST'))
 DB_PORT         = os.getenv('DB_PORT')
-DB_DATABASE     = os.getenv('DB_DATABASE')
-DB_SCHEMA       = os.getenv('DB_SCHEMA')
-DB_USER         = os.getenv('DB_USER')
-DB_PASS         = os.getenv('DB_PASS')
+DB_DATABASE     = str(os.getenv('DB_DATABASE'))
+DB_SCHEMA       = str(os.getenv('DB_SCHEMA'))
+DB_USER         = str(os.getenv('DB_USER'))
+DB_PASS         = str(os.getenv('DB_PASS'))
