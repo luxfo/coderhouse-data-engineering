@@ -18,10 +18,7 @@ create table players (
 id				int not null distkey,
 first_name		varchar(100) not null,
 last_name		varchar(100) not null,
-position		varchar(1),
-height_feet		int,
-height_inches	int,
-weight_pounds	int,
+position		varchar(5),
 team_id			int,
 etl_date        date not null
 ) sortkey(first_name, last_name)
@@ -38,7 +35,6 @@ period 				int,
 postseason			boolean,
 season				int,
 status 				varchar(10),
-time 				varchar(10),
 visitor_team_id		int not null,
 visitor_team_score	int,
 etl_date            date not null

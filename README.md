@@ -27,3 +27,8 @@ Proyecto de data engineering
 
   - python3 ETL/main.py
 
+# Docker
+
+  - docker build -t etl-nba ETL/.
+  - docker run --env-file=ETL/.env etl-nba
+  

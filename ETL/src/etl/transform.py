@@ -27,7 +27,7 @@ def _transform_data_teams(p_data_teams):
                 new_data.append(team)
 
         # DataFrame from team data
-        df_teams = pd.DataFrame(new_data)
+        df_teams = pd.json_normalize(new_data)   
         # Drop Duplicates
         df_teams.drop_duplicates()
         # Add column with date of processing
@@ -43,16 +43,15 @@ def _transform_data_players(p_data_players):
         # New array with only info from players
         for players in p_data_players:
             for player in players['data']:
-                # Add new attribute with id of the team
-                player['team_id'] = player['team']['id']
-                # Delete 'team' attribute becouse contain all team's data
-                player.pop('team', None)
                 new_data.append(player)
     
         # DataFrame from players data
-        df_players = pd.DataFrame(new_data)
+        df_players = pd.json_normalize(new_data)
+        # Get only columns to insert
+        df_players = df_players[['id', 'first_name', 'last_name', 'position', 'team.id']]
+        df_players = df_players.rename(columns={"team.id": "team_id"})
         # Drop duplicates
-        df_players.drop_duplicates()
+        df_players = df_players.drop_duplicates()
         # Add column with date of processing
         df_players['etl_date'] = pd.Timestamp.today().strftime('%Y-%m-%d')
         return df_players
@@ -66,20 +65,16 @@ def _transform_data_games(p_data_games):
         # New array with only info from games
         for games in p_data_games:
             for game in games['data']:
-                # Add new attribute with id of the home team
-                game['home_team_id'] = game['home_team']['id']
-                # Add new attribute with id of the visitor team
-                game['visitor_team_id'] = game['visitor_team']['id']
-                # Delete 'home_team' attribute becouse contain all home team's data
-                game.pop('home_team', None)
-                # Delete 'visitor_team' attribute becouse contain all visitor team's data
-                game.pop('visitor_team', None)
                 new_data.append(game)
     
         # DataFrame from games data
-        df_games = pd.DataFrame(new_data)
+        df_games = pd.json_normalize(new_data)
+        # Get only columns to insert
+        df_games = df_games[['id', 'date', 'home_team_score', 'period', 'postseason', 'season',
+                            'status', 'visitor_team_score', 'home_team.id', 'visitor_team.id']]
+        df_games = df_games.rename(columns={"home_team.id": "home_team_id", "visitor_team.id": "visitor_team_id"})
         # Drop duplicates
-        df_games.drop_duplicates()
+        df_games = df_games.drop_duplicates()
         # Add column with date of processing
         df_games['etl_date'] = pd.Timestamp.today().strftime('%Y-%m-%d')
         return df_games

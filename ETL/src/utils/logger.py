@@ -3,7 +3,7 @@ import logging
 import logging.handlers as handlers
 from ..config import LOG_LEVEL
 
-_log_path = 'ETL/log/'
+_log_path = './log/'
 
 if not os.path.exists(_log_path):
     os.makedirs(_log_path)
