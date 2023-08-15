@@ -29,6 +29,5 @@ Proyecto de data engineering
 
 # Docker
 
-  - docker build -t etl-nba ETL/.
-  - docker run --env-file=ETL/.env etl-nba
-  
+  - docker build -t img-python-etl ETL/.
+  - docker run --name=ctn-etl-nba --env-file=ETL/.env img-python-etl
