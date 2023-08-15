@@ -1,4 +1,12 @@
 .venv
 .env
 log
-__pycache__
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+**/.DS_Store
+.git
+.mypy_cache
+.pytest_cache
