@@ -1,7 +1,8 @@
 import pandas as pd
+from sqlalchemy import text
 from ..utils import logger
 from ..database import engine
-from ..config import DB_SCHEMA
+from ..config import ROOT_DIR, DB_SCHEMA
 
 def load_data(p_dfs):
     try:
@@ -46,6 +47,10 @@ def _to_sql(p_df, p_table):
         # (Don't use parameter if_exist='replace' on dataframe.to_sql
         # becouse drop the table and created again with others data types for columns)
         with engine.connect() as conn:
+            logger.debug('create table if not exists')
+            with open(ROOT_DIR + "/sql/table_" + p_table + ".sql") as file:
+                query = text(file.read())
+                conn.execute(query)
             logger.debug('truncate table ' + p_table)
             conn.execute('TRUNCATE TABLE ' + DB_SCHEMA + '.' + p_table)
         

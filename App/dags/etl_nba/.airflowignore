@@ -1,0 +1,15 @@
+database/
+src/
+*.json
+log/
+*.log
+*.DS_Store
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+environment/
+__pycache__/

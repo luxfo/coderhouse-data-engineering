@@ -1,11 +1,11 @@
-import sys
 import os
 import json
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv()
 
-ROOT_DIR = os.path.dirname(sys.modules['__main__'].__file__)
+ROOT_DIR = str(Path(__file__).parent.parent)
 
 _settings = None
 with open(ROOT_DIR + '/settings.json') as f:

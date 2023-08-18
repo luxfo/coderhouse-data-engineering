@@ -91,6 +91,7 @@ celerybeat-schedule
 # Log files
 log/
 *.log
+**/logs/*
 
 # ds_store
 *.DS_Store
