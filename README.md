@@ -4,8 +4,8 @@ Proyecto de data engineering
 
 # Folders
 
-  - ETL: Scripts python para extracción, transformación y carga de datos
-  - Database: Script con creación de tablas
+  - App: Scripts python/sql para extracción, transformación y carga de datos.
+  - Ejercicios: Script con ejercicios de clase.
 
 # API
 
@@ -32,3 +32,5 @@ Proyecto de data engineering
   - cd App
   - docker-compose up airflow-init
   - docker-compose up
+  - localhost:8080 -> Dag: dag_etl_nba
+
