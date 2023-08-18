@@ -21,13 +21,14 @@ Proyecto de data engineering
 
 # Install Dependencies
 
-  - pip3 install -r ETL/requirements.txt
+  - pip3 install -r App/dags/etl_nba/requirements.txt
 
-# Run
+# Run Script
 
-  - python3 ETL/main.py
+  - python3 App/dags/etl_nba/main.py
 
-# Docker
+# Airflow-Docker
 
-  - docker build -t img-python-etl ETL/.
-  - docker run --name=ctn-etl-nba --env-file=ETL/.env img-python-etl
+  - cd App
+  - docker-compose up airflow-init
+  - docker-compose up
