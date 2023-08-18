@@ -10,7 +10,7 @@ default_args = {
 
 @dag(
     dag_id= "dag_etl_nba",
-    description= "process etl nba",
+    description= "procesamiento de datos de la nba (ETL)",
     default_args= default_args,
     schedule_interval= "@daily",
     start_date= datetime(2023, 8, 10),
