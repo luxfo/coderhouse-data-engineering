@@ -19,12 +19,9 @@ Proyecto de data engineering
 
   - Amazon Redshift
 
-# Install Dependencies
-
-  - pip3 install -r App/dags/etl_nba/requirements.txt
-
 # Run Script
 
+  - pip3 install -r App/requirements.txt
   - python3 App/dags/etl_nba/main.py
 
 # Airflow-Docker

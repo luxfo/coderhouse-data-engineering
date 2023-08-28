@@ -21,3 +21,11 @@ DB_DATABASE     = str(os.getenv('DB_DATABASE'))
 DB_SCHEMA       = str(os.getenv('DB_SCHEMA'))
 DB_USER         = str(os.getenv('DB_USER'))
 DB_PASS         = str(os.getenv('DB_PASS'))
+
+SMTP_HOST       = str(os.getenv('SMTP_HOST'))
+SMTP_PORT       = int(os.getenv('SMTP_PORT'))
+SMTP_USER       = str(os.getenv('SMTP_USER'))
+SMTP_PASSWORD   = str(os.getenv('SMTP_PASSWORD'))
+SMTP_MAIL_FROM  = str(os.getenv('SMTP_MAIL_FROM'))
+
+MAIL_TO         = _settings['mailing']['to']

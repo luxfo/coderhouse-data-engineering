@@ -5,5 +5,8 @@
     },
     "logging": {
         "level": "DEBUG"
+    },
+    "mailing": {
+        "to": ["luciano.fodrini@gmail.com"]
     }
 }
