@@ -60,7 +60,7 @@ def notify_email(context):
 # Flow task of dag
 def task_flow_nba():
     # Task to extract data from api
-    @task(n_failure_callback=notify_email)
+    @task(on_failure_callback=notify_email)
     def get_data():
         data = extract_data()
         return data
