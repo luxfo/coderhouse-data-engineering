@@ -18,7 +18,6 @@ def notify_email(context):
 
     subject = ""
     body = ""
-    print('notify_email:' + dag_run._state)
            
     if dag_run._state == State.SUCCESS: # Success email
         subject = f"""Airflow OK: "{dag_run.dag_id}" succeed"""
