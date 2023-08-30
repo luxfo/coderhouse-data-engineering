@@ -26,6 +26,6 @@ SMTP_HOST       = str(os.getenv('SMTP_HOST'))
 SMTP_PORT       = int(os.getenv('SMTP_PORT'))
 SMTP_USER       = str(os.getenv('SMTP_USER'))
 SMTP_PASSWORD   = str(os.getenv('SMTP_PASSWORD'))
-SMTP_MAIL_FROM  = str(os.getenv('SMTP_MAIL_FROM'))
 
+MAIL_FROM       = _settings['mailing']['from']
 MAIL_TO         = _settings['mailing']['to']

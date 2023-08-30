@@ -1,18 +1,20 @@
 import smtplib
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
-from ..config import SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, SMTP_MAIL_FROM
+from email.message import EmailMessage
+from ..config import SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASSWORD, MAIL_FROM
 
 def send_mail(p_to, p_subject, p_body):
-    message = MIMEMultipart()
-    message["From"] = SMTP_MAIL_FROM
-    message["Subject"] = p_subject
-    message.attach(MIMEText(p_body, "html"))
+    try:
+        message = EmailMessage()
+        message["From"] = "Airflow <" + MAIL_FROM + ">"
+        message["To"] = ', '.join(p_to)
+        message["Subject"] = p_subject
+        message.add_header('Content-Type','text/html')
+        message.set_payload(p_body)
 
-    with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as smtp:
-        smtp.ehlo()
-        smtp.starttls()
-        smtp.ehlo()
-        smtp.login(SMTP_USER, SMTP_PASSWORD)
-        smtp.sendmail(SMTP_MAIL_FROM, p_to, str(message))
-        smtp.quit()
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as smtp:
+            smtp.starttls()
+            smtp.login(SMTP_USER, SMTP_PASSWORD)
+            smtp.send_message(message)
+            smtp.quit()
+    except Exception as err:
+        raise

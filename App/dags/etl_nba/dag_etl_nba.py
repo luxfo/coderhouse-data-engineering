@@ -20,7 +20,7 @@ def notify_email(context):
     body = ""
            
     if dag_run._state == State.SUCCESS: # Success email
-        subject = f"""Airflow OK: "{dag_run.dag_id}" succeed"""
+        subject = f"""Airflow OK: "{dag_run.dag_id}" finished successfully"""
         body = """
             <h2>Mail message from Airflow</h2>
             <hr />
@@ -49,7 +49,8 @@ def notify_email(context):
     send_mail(p_to=recipient_emails, p_subject=subject, p_body=body)
 
 # Dag
-'''
+''' Default args
+    ------------
     owner: creator of de dag.
     retries: number of retries.
     retry_delay: time to try again.
@@ -61,7 +62,8 @@ default_args = {
     'retry_delay': timedelta(seconds=30),
     'on_failure_callback': notify_email
 }
-'''
+''' Parameters
+    ----------
     start_date: date will start being scheduled.
     schedule_interval: how the dag have to run. In this case, daily.
     catchup: if the dag starts processing including past intervals.
